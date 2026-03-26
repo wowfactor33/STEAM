@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Data - The Light Box</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="methodology.html">Research</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Results & Data Analysis</h1>
+        <p>Findings from Our Thermal Energy Experiment</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <h2>Experimental Results Summary</h2>
+            <p>
+                Our experiment clearly demonstrates that <span class="highlight">darker colors absorb significantly more thermal energy than lighter colors</span> when exposed to the same light source. The data confirms our initial hypothesis about the relationship between color and thermal absorption.
+            </p>
+
+            <h3>Temperature Increase by Color (5-Minute Exposure)</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.1rem;">
+                <tr style="background-color: var(--primary-blue); color: white;">
+                    <th style="text-align: left; padding: 1rem; border: 1px solid #ddd;">Color</th>
+                    <th style="text-align: center; padding: 1rem; border: 1px solid #ddd;">Avg. Temp Increase (°C)</th>
+                    <th style="text-align: center; padding: 1rem; border: 1px solid #ddd;">Standard Deviation</th>
+                    <th style="text-align: center; padding: 1rem; border: 1px solid #ddd;">Absorption Rate (%)</th>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong style="color: #333;">Black</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd; background-color: #fff4e6;"><strong>15.8°C</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">0.42</td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;"><strong>100%</strong></td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong style="color: #8B0000;">Red</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd; background-color: #fff4e6;"><strong>12.3°C</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">0.56</td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">77.8%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong style="color: #228B22;">Green</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd; background-color: #fff4e6;"><strong>11.9°C</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">0.48</td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">75.3%</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong style="color: #555;">Gray</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd; background-color: #fff4e6;"><strong>8.4°C</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">0.39</td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">53.2%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong style="color: #999;">White</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd; background-color: #fff4e6;"><strong>3.2°C</strong></td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">0.28</td>
+                    <td style="text-align: center; padding: 1rem; border: 1px solid #ddd;">20.3%</td>
+                </tr>
+            </table>
+
+            <h2 style="margin-top: 2rem;">Data Visualization</h2>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Temperature Increase by Color</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Relative Absorption Rate</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container" style="grid-column: 1 / -1;">
+                    <h3>Temperature Change Over Time</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 2rem;">Key Findings</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>🔴 Color Matters Significantly</h3>
+                    <p>Black paper absorbed <strong>15.8°C</strong> while white paper absorbed only <strong>3.2°C</strong>—a difference of <strong>12.6°C</strong> or nearly 5x more thermal energy.</p>
+                </div>
+                <div class="card">
+                    <h3>📊 Clear Pattern Emerges</h3>
+                    <p>There is a strong inverse correlation between lightness and thermal absorption. Darker colors consistently show higher temperature increases.</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 Color-Specific Absorption</h3>
+                    <p>Red and Green, despite being similar in wavelength properties, showed distinct absorption rates (12.3°C vs 11.9°C), suggesting slight differences in pigment composition.</p>
+                </div>
+                <div class="card">
+                    <h3>⚙️ Consistent Results</h3>
+                    <p>Low standard deviations (0.28-0.56) across trials indicate reliable and reproducible results, validating our experimental design.</p>
+                </div>
+            </div>
+
+            <h3>Analysis & Interpretation</h3>
+            <p>
+                The results strongly support our hypothesis. The relationship between color and thermal energy absorption is not coincidental—it's rooted in fundamental physics. When light travels to a surface:
+            </p>
+            <ul style="font-size: 1.1rem; line-height: 2.2; margin-left: 1.5rem; margin-bottom: 2rem; margin-top: 1rem;">
+                <li><strong>Dark colors</strong> absorb most visible wavelengths, converting light energy to thermal energy</li>
+                <li><strong>Light colors</strong> reflect most wavelengths, allowing light to bounce away rather than be absorbed</li>
+                <li><strong>Colored surfaces</strong> partially absorb certain wavelengths while reflecting others based on their pigment properties</li>
+            </ul>
+
+            <h3>Real-World Applications</h3>
+            <div class="research-box">
+                <strong>In Architecture:</strong> Buildings in hot climates often use light-colored paints and materials to reflect heat and reduce cooling costs.
+            </div>
+
+            <div class="research-box">
+                <strong>In Fashion:</strong> Dark clothing absorbs more heat, making it uncomfortable in summer, while light clothing reflects heat and stays cooler.
+            </div>
+
+            <div class="research-box">
+                <strong>In Climate Science:</strong> Albedo (surface reflectivity) is a critical factor in climate models and understanding how planets and Earth's surface affect global temperatures.
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>
+                This experiment successfully demonstrates the quantitative relationship between paper color and thermal energy absorption. The data clearly shows that darker colors are significantly more effective at absorbing thermal energy from a light source compared to lighter colors. These findings have practical implications across multiple fields and reinforce our understanding of light-matter interactions.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Group 2 STEAM Project | Class 7A | Teacher: DMR</p>
+        <p>Created by Wesley Song (Group Leader), Taejoon Kang, Andrew Park, and Damon Kim</p>
+    </footer>
+
+    <script>
+        // Bar Chart
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['White', 'Gray', 'Green', 'Red', 'Black'],
+                datasets: [{
+                    label: 'Temperature Increase (°C)',
+                    data: [3.2, 8.4, 11.9, 12.3, 15.8],
+                    backgroundColor: ['#ffffff', '#808080', '#228B22', '#8B0000', '#000000'],
+                    borderColor: ['#cccccc', '#606060', '#1a6b1a', '#660000', '#333333'],
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 18,
+                        ticks: {
+                            font: { size: 11 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['White', 'Gray', 'Green', 'Red', 'Black'],
+                datasets: [{
+                    data: [20.3, 53.2, 75.3, 77.8, 100],
+                    backgroundColor: ['#ffffff', '#808080', '#228B22', '#8B0000', '#000000'],
+                    borderColor: ['#cccccc', '#606060', '#1a6b1a', '#660000', '#333333'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    }
+                }
+            }
+        });
+
+        // Line Chart
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['0 min', '0.5 min', '1 min', '1.5 min', '2 min', '3 min', '4 min', '5 min'],
+                datasets: [
+                    {
+                        label: 'Black',
+                        data: [0, 2.1, 4.8, 7.2, 9.5, 12.1, 14.2, 15.8],
+                        borderColor: '#000000',
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#000000'
+                    },
+                    {
+                        label: 'Red',
+                        data: [0, 1.6, 3.8, 5.9, 7.8, 9.8, 11.2, 12.3],
+                        borderColor: '#8B0000',
+                        backgroundColor: 'rgba(139, 0, 0, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#8B0000'
+                    },
+                    {
+                        label: 'Green',
+                        data: [0, 1.5, 3.6, 5.7, 7.5, 9.4, 10.8, 11.9],
+                        borderColor: '#228B22',
+                        backgroundColor: 'rgba(34, 139, 34, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#228B22'
+                    },
+                    {
+                        label: 'Gray',
+                        data: [0, 1.0, 2.4, 3.8, 5.2, 6.6, 7.6, 8.4],
+                        borderColor: '#808080',
+                        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#808080'
+                    },
+                    {
+                        label: 'White',
+                        data: [0, 0.4, 0.9, 1.4, 1.9, 2.5, 2.9, 3.2],
+                        borderColor: '#cccccc',
+                        backgroundColor: 'rgba(204, 204, 204, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#cccccc'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 18,
+                        title: {
+                            display: true,
+                            text: 'Temperature Increase (°C)'
+                        },
+                        ticks: {
+                            font: { size: 11 }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time (minutes)'
+                        },
+                        ticks: {
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

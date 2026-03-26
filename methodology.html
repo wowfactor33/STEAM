@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology & Research - The Light Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="methodology.html">Research</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Methodology & Research</h1>
+        <p>How We Conducted Our Experiment</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <h2>Research Question</h2>
+            <div class="research-box">
+                <p>
+                    <strong>To what extent does the color of paper (White, Gray, Red, Green, and Black) affect the rate of thermal energy absorption, measured in degrees Celsius (°C) over 5 minutes, when held at a constant automated distance from a 60W incandescent light source?</strong>
+                </p>
+            </div>
+
+            <h3>Hypothesis</h3>
+            <p>
+                We hypothesized that <span class="highlight">darker colors would absorb more thermal energy than lighter colors</span> when exposed to the same light source for the same duration. Specifically, we predicted the order of heat absorption from highest to lowest would be:
+            </p>
+            <ol style="font-size: 1.1rem; line-height: 2; margin-left: 2rem; margin-bottom: 2rem;">
+                <li>Black</li>
+                <li>Red/Green (approximately equal)</li>
+                <li>Gray</li>
+                <li>White</li>
+            </ol>
+
+            <h2 style="margin-top: 2rem;">Experimental Procedure</h2>
+
+            <h3>Equipment & Materials</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Light Source</h3>
+                    <p>60W incandescent light bulb positioned at a fixed distance to provide consistent illumination</p>
+                </div>
+                <div class="card">
+                    <h3>Temperature Measurement</h3>
+                    <p>Calibrated digital thermometer for accurate temperature readings in degrees Celsius</p>
+                </div>
+                <div class="card">
+                    <h3>Test Samples</h3>
+                    <p>Same-sized paper samples in five colors: White, Gray, Red, Green, and Black</p>
+                </div>
+                <div class="card">
+                    <h3>Control Setup</h3>
+                    <p>Automated positioning system to maintain constant distance and angle for all tests</p>
+                </div>
+            </div>
+
+            <h3>Detailed Experimental Method</h3>
+            <ol style="font-size: 1.1rem; line-height: 2.2; margin-left: 1.5rem; margin-bottom: 2rem;">
+                <li><strong>Setup:</strong> A 60W incandescent lamp is placed inside a dark box to control light distribution and prevent external light interference</li>
+                <li><strong>Sample Preparation:</strong> A 5cm × 5cm colored paper sample is placed 200mm away from the light source</li>
+                <li><strong>Precision Control:</strong> An ultrasonic distance sensor measures the distance between the paper and the light bulb. A motor with a lead screw mechanism provides micro-control for precise distance maintenance across all trials</li>
+                <li><strong>Temperature Measurement Setup:</strong> An infrared camera is placed 10cm away for measuring the paper temperature. An additional IR sensor is used to prevent anomalies. Both measurements are combined and averaged for accuracy</li>
+                <li><strong>Safety Check:</strong> Place a temperature sensor to monitor for overheating and initiate emergency stop if needed. Cover the box with heat-proof materials</li>
+                <li><strong>Initialization:</strong> After verifying all equipment operates correctly, close the box lid and initiate the data collection sequence</li>
+                <li><strong>Monitoring:</strong> Monitor the situation via LCD display and verify that data is being recorded properly</li>
+                <li><strong>Data Collection:</strong> Record temperature readings for the entire 5-minute exposure period</li>
+                <li><strong>Repetition:</strong> Allow the sample to cool and repeat the entire procedure for each colored paper sample</li>
+            </ol>
+
+            <h3>Variables</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1rem;">
+                <tr style="background-color: #f0f0f0;">
+                    <th style="text-align: left; padding: 1rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Variable Type</strong></th>
+                    <th style="text-align: left; padding: 1rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Description</strong></th>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Independent Variable (IV)</strong></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Color of paper: White, Gray, Red, Green, Black (5 distinct values)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Dependent Variable (DV)</strong></td>
+                    <td style="padding: 1rem; border: 1px solid #ddd;">Temperature increase (°C) measured with infrared temperature sensor and camera over 5 minutes</td>
+                </tr>
+            </table>
+
+            <h3>Controlled Variables</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem;">
+                <tr style="background-color: #f0f0f0;">
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Controlled Variable</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Value & Units</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Method</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Why It's Important</strong></th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Distance from light bulb</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">200 mm</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Ultrasonic sensor measures distance; motor with lead screw maintains constant distance</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Distance affects number of photons reaching the paper; longer distance = more light absorption by air/materials</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Light bulb power</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">60W incandescent</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Use the same light bulb for all trials</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Different wattages produce different light intensities and heat; must remain constant</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Heat of light bulb</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Monitored with temperature sensor</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Cover box with heat-proof materials; use temperature sensor for monitoring; emergency stop if overheating</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Excessive heat could burn equipment and affect measurement accuracy</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Direction of light</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Perpendicular to paper surface</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Fixed light source position in dark box ensures consistent angle</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Light angle affects energy absorption; different angles = different absorption rates</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Paper sample size</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">5cm × 5cm</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Cut all paper samples to identical dimensions</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Larger surface area = more light absorption; must be uniform for valid comparisons</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Exposure time</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">5 minutes (300 seconds)</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Use timer to ensure exact duration for all trials</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Longer exposure = more thermal energy absorption; duration must be identical</td>
+                </tr>
+            </table>
+
+            <h3>Data Analysis Methods</h3>
+            <ul style="font-size: 1.1rem; line-height: 2; margin-left: 1.5rem; margin-bottom: 2rem;">
+                <li><strong>Descriptive Statistics:</strong> Calculate mean, median, and standard deviation for each color</li>
+                <li><strong>Graphical Analysis:</strong> Create line graphs showing temperature change over time for each color</li>
+                <li><strong>Comparative Analysis:</strong> Use bar charts to compare final temperature increases across colors</li>
+                <li><strong>Trend Analysis:</strong> Identify patterns in absorption rates for different colors</li>
+            </ul>
+
+            <h2 style="margin-top: 2rem;">Equipment & Materials List</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1rem;">
+                <tr style="background-color: #f0f0f0;">
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Quantity</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Equipment Name</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Specifications</strong></th>
+                    <th style="text-align: left; padding: 0.75rem; border: 1px solid #ddd; color: var(--primary-blue);"><strong>Notes</strong></th>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Infrared Camera</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">IR Temperature sensor</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Provided by Dr. Mompel</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Light Bulb</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">60W Incandescent</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Must be incandescent to produce thermal Energy</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Ultrasonic Sensor</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Distance measurement</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Measures distance from bulb to paper sample</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">5</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Colored Paper Samples</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">5cm × 5cm each</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">White, Gray, Red, Green, Black</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Arduino Nano or Uno</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Microcontroller</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Main controller for sensors and motor</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Lead Screw & Nut</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">T8 or similar</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Linear motion mechanism for distance control</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Stepper Motor</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">With lead screw</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Provides precise micro-control of distance</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Breadboard & Jumper Wires</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1 pack</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Electronic connections without soldering</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>LCD Display</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">16x2 characters with I2C interface</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Monitor experiment status and data</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Temperature Sensor</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">±0.5°C accuracy</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Monitor for overheating; safety purposes</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Dark Box/Enclosure</strong></td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Heat-proof materials</td>
+                    <td style="padding: 0.75rem; border: 1px solid #ddd;">Control light distribution; safety insulation</td>
+                </tr>
+            </table>
+
+            <h2 style="margin-top: 2rem;">Risk Assessment & Safety</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>⚠️ Hot Bulb</h3>
+                    <p><strong>Hazard:</strong> Bulb surface may burn skin.</p>
+                    <p><strong>Precaution:</strong> Do not touch the bulb while it is on.</p>
+                </div>
+                <div class="card">
+                    <h3>🔥 Box Burning</h3>
+                    <p><strong>Hazard:</strong> Heat may burn the box material.</p>
+                    <p><strong>Precaution:</strong> Control light bulb position so it doesn't touch the box. Monitor with temperature sensor.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Electrical Shock</h3>
+                    <p><strong>Hazard:</strong> Mains power and Arduino wiring.</p>
+                    <p><strong>Precaution:</strong> Ensure all wires are insulated. Follow electrical safety protocols.</p>
+                </div>
+                <div class="card">
+                    <h3>🔨 Glass Breaking</h3>
+                    <p><strong>Hazard:</strong> Dropped bulb creates sharp fragments.</p>
+                    <p><strong>Precaution:</strong> Secure lamp to stable base. Handle with care.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Group 2 STEAM Project | Class 7A | Teacher: DMR</p>
+        <p>Created by Wesley Song (Group Leader), Taejoon Kang, Andrew Park, and Damon Kim</p>
+    </footer>
+</body>
+</html>
