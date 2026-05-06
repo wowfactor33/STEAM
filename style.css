@@ -5,26 +5,26 @@
 }
 
 :root {
-    --primary-blue: #0066cc;
-    --primary-purple: #6b5b95;
-    --accent-cyan: #00d4d4;
-    --accent-orange: #ff9500;
-    --dark-bg: #0a0e27;
-    --light-bg: #f5f7fa;
-    --text-dark: #1a1f3a;
+    --primary-blue: #4a90e2;
+    --primary-green: #7ed321;
+    --accent-yellow: #f5a623;
+    --accent-gray: #9b9b9b;
+    --dark-bg: #34495e;
+    --light-bg: #f8f9fa;
+    --text-dark: #2c3e50;
     --text-light: #ffffff;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 /* Navigation */
 nav {
-    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -53,14 +53,14 @@ nav a {
 }
 
 nav a:hover {
-    background: var(--accent-cyan);
+    background: var(--accent-yellow);
     color: var(--text-dark);
     transform: translateY(-2px);
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
     color: var(--text-light);
     padding: 3rem 1rem;
     text-align: center;
@@ -88,7 +88,7 @@ header p {
 .content {
     background: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
@@ -97,12 +97,12 @@ h2 {
     color: var(--primary-blue);
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    border-bottom: 3px solid var(--accent-cyan);
+    border-bottom: 3px solid var(--primary-green);
     padding-bottom: 0.5rem;
 }
 
 h3 {
-    color: var(--primary-purple);
+    color: var(--primary-green);
     font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -125,10 +125,10 @@ p {
 .card {
     background: white;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border-left: 4px solid var(--accent-orange);
+    border-left: 4px solid var(--accent-yellow);
 }
 
 .card:hover {
@@ -176,6 +176,70 @@ p {
     margin-bottom: 1rem;
 }
 
+/* 3D Model Viewer */
+.model-showcase {
+    margin: 2.5rem 0;
+    padding: 1.75rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 212, 212, 0.1) 100%);
+    border: 1px solid rgba(0, 102, 204, 0.12);
+}
+
+.model-showcase h3 {
+    margin-top: 0;
+}
+
+.model-stage {
+    position: relative;
+    min-height: 460px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.85) 0%, rgba(232, 238, 247, 0.95) 38%, rgba(210, 223, 240, 1) 100%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.model-stage canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.model-status {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(2px);
+}
+
+.model-status.is-hidden {
+    display: none;
+}
+
+.model-caption {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.model-caption a {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.model-caption a:hover {
+    color: var(--primary-purple);
+}
+
 /* Team Section */
 .team-grid {
     display: grid;
@@ -191,6 +255,22 @@ p {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-top: 4px solid var(--accent-cyan);
+}
+
+.team-member-photo-wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent-cyan);
+}
+
+.team-member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .team-member h3 {
@@ -210,7 +290,7 @@ p {
     margin: 2rem auto;
     background: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -248,7 +328,7 @@ textarea {
 }
 
 button {
-    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-green) 100%);
     color: var(--text-light);
     padding: 0.75rem 2rem;
     border: none;
@@ -313,16 +393,37 @@ footer a:hover {
     .content {
         padding: 1.5rem;
     }
+
+    .model-stage {
+        min-height: 340px;
+    }
 }
 
-/* Utility Classes */
-.text-center {
-    text-align: center;
+/* Character Counters */
+.char-counter {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    text-align: right;
 }
 
-.highlight {
-    color: var(--accent-orange);
-    font-weight: 600;
+.char-counter.warning {
+    color: var(--accent-yellow);
+}
+
+.char-counter.error {
+    color: #e74c3c;
+}
+
+/* Error Messages */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.error-message.visible {
+    display: block;
 }
 
 /* Authentication Modal */
@@ -465,139 +566,4 @@ footer a:hover {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Edit Controls */
-.edit-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0.75rem 2rem;
-    background: rgba(217, 119, 6, 0.1);
-    border-bottom: 2px solid var(--accent-orange);
-}
 
-.toggle-edit-btn,
-.save-edits-btn,
-.discard-edits-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent-orange);
-    border-radius: 0;
-    cursor: pointer;
-    font-size: 11pt;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    font-family: 'Arial', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.toggle-edit-btn {
-    background: white;
-    color: var(--accent-orange);
-}
-
-.toggle-edit-btn:hover {
-    background: var(--accent-orange);
-    color: white;
-}
-
-.save-edits-btn {
-    background: #10b981;
-    color: white;
-    border-color: #10b981;
-}
-
-.save-edits-btn:hover {
-    background: #059669;
-    border-color: #059669;
-}
-
-.discard-edits-btn {
-    background: #ef4444;
-    color: white;
-    border-color: #ef4444;
-}
-
-.discard-edits-btn:hover {
-    background: #dc2626;
-    border-color: #dc2626;
-}
-
-/* Edit Mode Styling */
-body.edit-mode .editable {
-    background: rgba(217, 119, 6, 0.15);
-    border: 1px dashed var(--accent-orange);
-    padding: 0.5rem;
-    margin: 0.25rem 0;
-    cursor: text;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-body.edit-mode .editable::after {
-    content: '✏️';
-    position: absolute;
-    right: -15px;
-    top: -10px;
-    font-size: 14pt;
-    background: var(--accent-orange);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-body.edit-mode .editable:hover::after {
-    opacity: 1;
-}
-
-body.edit-mode .editable:hover {
-    background: rgba(217, 119, 6, 0.2);
-    box-shadow: inset 0 0 4px rgba(217, 119, 6, 0.3);
-}
-
-body.edit-mode .editable:focus {
-    outline: none;
-    background: rgba(217, 119, 6, 0.25);
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2), inset 0 0 4px rgba(217, 119, 6, 0.3);
-}
-
-/* Editable Images */
-body.edit-mode img.editable-image {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-}
-
-body.edit-mode img.editable-image:hover {
-    opacity: 1;
-    border: 2px dashed var(--accent-orange);
-    box-shadow: 0 0 8px rgba(217, 119, 6, 0.3);
-    transform: scale(1.02);
-}
-
-/* Edit Mode Indicator */
-body.edit-mode header {
-    border-bottom-color: var(--accent-orange);
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
-}
-
-body.edit-mode header::after {
-    content: '✎ EDIT MODE ACTIVE ✎';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent-orange);
-    color: white;
-    padding: 0.25rem 1rem;
-    font-size: 10pt;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-}
