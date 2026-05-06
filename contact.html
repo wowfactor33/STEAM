@@ -22,34 +22,34 @@
     <!-- Header -->
     <header>
         <h1>Contact Us</h1>
-        <p>Get in Touch - Questions? We'd Love to Hear From You</p>
+        <p>Hey There! Got Questions? Shoot Us a Message!</p>
     </header>
 
     <!-- Main Content -->
     <div class="container">
         <div class="content">
-            <h2>We'd Love to Hear From You</h2>
+            <h2>Hey There! Got Questions? Shoot Us a Message!</h2>
             <p>
-                Whether you have questions about our research methodology, want to discuss our findings, or are interested in conducting a similar experiment, we're here to help. Use the form below to get in touch with us.
+                Whether you have questions about our research methodology, want to discuss our findings, or are interested in conducting a similar experiment, we're here to help. Use the form below to get in touch with us. Let's chat science! 🚀
             </p>
 
             <div class="cards-grid">
                 <div class="card">
-                    <h3>📧 Email</h3>
+                    <h3>Email</h3>
                     <p>For detailed inquiries about our research:<br>
                     <strong>wsong32@pupils.nlcsjeju.kr</strong></p>
                 </div>
                 <div class="card">
-                    <h3>📱 Social Media</h3>
+                    <h3>Social Media</h3>
                     <p>Connect with our school! @nlcs_jeju</p>
                 </div>
                 <div class="card">
-                    <h3>🏫 School Location</h3>
+                    <h3>School Location</h3>
                     <p>NLCS Jeju</p>
                 </div>
             </div>
 
-            <h2 style="margin-top: 2rem;">Contact Form</h2>
+            <h2 style="margin-top: 2rem;">Send Us a Message!</h2>
             <form class="contact-form" action="https://formsubmit.co/wsong32@pupils.nlcsjeju.kr" method="POST">
                 <div class="form-group">
                     <label for="name">Your Name *</label>
@@ -69,7 +69,7 @@
                         id="email" 
                         name="email" 
                         required
-                        placeholder="your.email@example.com"
+                        placeholder="bob_is_hungry@example.com"
                     >
                 </div>
 
@@ -113,25 +113,169 @@
                 <p>
                     Our work is shared for educational purposes. If you use our project as a reference or build upon our findings, please credit us appropriately and follow your school's academic integrity policies. Science progresses through building on previous work!
                 </p>
-
-                <h3 style="margin-top: 1.5rem;">Do you offer workshops or demonstrations?</h3>
-                <p>
-                    We're passionate about science education! While schedules vary, we may be available for school presentations or science fair demonstrations. Contact us to discuss possibilities.
-                </p>
-
                 <h3 style="margin-top: 1.5rem;">How long did this project take?</h3>
                 <p>
-                    From initial concept to final website publication, the project spanned 6 weeks. This included research, planning, equipment setup, data collection across multiple trials, analysis, and documentation. We believe quality scientific work takes time!
+                    From initial concept to final website publication, the project spanned 6s weeks. This included research, planning, equipment setup, data collection across multiple trials, analysis, and documentation. We believe quality scientific work takes time!
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Group 2 STEAM Project | Class 7A | Teacher: DMR</p>
         <p>Created by Wesley Song (Group Leader), Taejoon Kang, Andrew Park, and Damon Kim</p>
     </footer>
-    <script src="auth.js"></script>
+
+    <script>
+        // Character limits
+        const limits = {
+            name: 50,
+            email: 100,
+            subject: 100,
+            message: 1000
+        };
+
+        // Initialize counters and validation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add counters to inputs
+            addCharacterCounters();
+            
+            // Add real-time validation
+            addValidationListeners();
+        });
+
+        function addCharacterCounters() {
+            const inputs = ['name', 'email', 'subject', 'message'];
+            
+            inputs.forEach(id => {
+                const input = document.getElementById(id);
+                const counter = document.createElement('div');
+                counter.className = 'char-counter';
+                counter.id = `${id}-counter`;
+                input.parentNode.appendChild(counter);
+                
+                // Initial count
+                updateCounter(id);
+                
+                // Update on input
+                input.addEventListener('input', () => updateCounter(id));
+            });
+        }
+
+        function updateCounter(id) {
+            const input = document.getElementById(id);
+            const counter = document.getElementById(`${id}-counter`);
+            const length = input.value.length;
+            const limit = limits[id];
+            
+            counter.textContent = `${length}/${limit}`;
+            
+            // Color coding
+            counter.classList.remove('warning', 'error');
+            if (length > limit * 0.9) {
+                counter.classList.add('error');
+            } else if (length > limit * 0.8) {
+                counter.classList.add('warning');
+            }
+        }
+
+        function addValidationListeners() {
+            const form = document.querySelector('.contact-form');
+            
+            form.addEventListener('submit', function(e) {
+                if (!validateForm()) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            // Real-time email validation
+            const emailInput = document.getElementById('email');
+            emailInput.addEventListener('blur', validateEmail);
+        }
+
+        function validateForm() {
+            let isValid = true;
+            
+            // Check character limits
+            Object.keys(limits).forEach(id => {
+                const input = document.getElementById(id);
+                if (input.value.length > limits[id]) {
+                    showError(id, `Too long! Maximum ${limits[id]} characters.`);
+                    isValid = false;
+                } else {
+                    hideError(id);
+                }
+            });
+            
+            // Email validation
+            if (!validateEmailFormat()) {
+                isValid = false;
+            }
+            
+            // Content filtering
+            if (!validateContent()) {
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function validateEmailFormat() {
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                showError('email', 'Please enter a valid email address.');
+                return false;
+            } else {
+                hideError('email');
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            validateEmailFormat();
+        }
+
+        function validateContent() {
+            const inputs = ['name', 'subject', 'message'];
+            let isValid = true;
+            
+            inputs.forEach(id => {
+                const input = document.getElementById(id);
+                const content = input.value;
+                
+                // Check for XML/HTML injection attempts
+                if (/<[^>]*>/.test(content)) {
+                    showError(id, 'HTML/XML tags are not allowed.');
+                    isValid = false;
+                } else {
+                    hideError(id);
+                }
+            });
+            
+            return isValid;
+        }
+
+        function showError(id, message) {
+            let errorElement = document.getElementById(`${id}-error`);
+            if (!errorElement) {
+                errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.id = `${id}-error`;
+                document.getElementById(id).parentNode.appendChild(errorElement);
+            }
+            errorElement.textContent = message;
+            errorElement.classList.add('visible');
+        }
+
+        function hideError(id) {
+            const errorElement = document.getElementById(`${id}-error`);
+            if (errorElement) {
+                errorElement.classList.remove('visible');
+            }
+        }
+    </script>
 </body>
 </html>
